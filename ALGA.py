@@ -8,9 +8,7 @@ import os
 import random
 from scipy.stats import qmc
 
-# File path settings
-data_directory = 'D:\\OneDrive\\Machine learning\\Machine learning with small dataset'
-original_data_file = os.path.join(data_directory, 'data pool.xlsx')
+data_directory = 
 
 # Define feature ranges and increments
 feature_ranges = [
@@ -147,7 +145,6 @@ def optimize(D, P, imax, pc, pm, rf_params, feature_columns, k_column):
     best_index = D[k_column].idxmax()
     return D.loc[best_index, feature_columns], D.loc[best_index, k_column]
 
-# Main execution
 original_data = pd.read_excel(original_data_file, header=None)
 
 feature_columns = [f'Feature_{i}' for i in range(1, 9)]
