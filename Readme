@@ -1,19 +1,138 @@
 Active Learning Genetic Algorithm
-This project implements a hybrid optimization approach combining active learning (AL) and Genetic Algorithm (GA) for parameter optimization with small datasets. The program uses an iterative process to suggest optimal experimental conditions and incorporates user feedback through experimental results.
-
+This project implements an Active Learning Genetic Algorithm (ALGA) framework that combines Active Learning (AL) and Genetic Algorithm (GA) for parameter optimization with small datasets. The system is designed to iteratively improve predictions through experimental validation and genetic operations.
 
 Environment Requirements
-
 Python 3.10
 
 Required packages:
+pip install numpy==1.26.4
+pip install pandas==2.2.2
+pip install scikit-learn==1.4.2
+pip install scipy
 
-numpy (1.26.4)
-pandas (2.2.2)
-scikit-learn (1.4.2)
-scipy (for qmc.LatinHypercube sampling)
-os (built-in)
-random (built-in)
+
+Package Details
+numpy (1.26.4): Array operations and numerical computations
+pandas (2.2.2): Data manipulation and Excel file handling
+scikit-learn (1.4.2): Machine learning algorithms
+scipy: Statistical operations and sampling
+os (built-in): File operations
+random (built-in): Random number generation
 
 
 Project Structure
+project_root/
+├── data/
+│   ├── data pool.xlsx
+│   └── results/
+├── src/
+│   ├── main.py
+│   ├── config.py
+│   └── utils/
+└── README.md
+
+
+File Descriptions
+data pool.xlsx: Initial dataset
+main.py: Main execution script
+config.py: Configuration settings
+utils/: Utility functions
+
+
+Algorithm Details
+ALGA Framework Overview
+
+Initialization Phase
+Random Forest Training
+Genetic Operations
+Experimental Validation
+Iteration and Convergence
+
+Initial Data Format
+Feature_1 | Feature_2 | Feature_3 | ... | Feature_N | Output
+----------|-----------|-----------|-----|-----------|--------
+value     | value     | value     | ... | value     | value
+
+Feature Configuration
+# Example feature configuration
+feature_ranges = [
+    (min_val, max_val, step),  # Feature 1
+    (min_val, max_val, step),  # Feature 2
+    # Add more features as needed
+]
+
+Implementation Details
+Key Functions
+
+Data Processing
+def clean_and_select_data(data, feature_columns, k_column):
+    """
+    Clean and prepare data for processing
+    Args:
+        data: Input DataFrame
+        feature_columns: List of feature names
+        k_column: Output column name
+    Returns:
+        Cleaned DataFrame
+    """
+
+Experiment Handling
+def conduct_experiment(x):
+    """
+    Handle experimental input
+    Args:
+        x: Feature vector
+    Returns:
+        Experimental k value
+    """
+
+Model Optimization
+pythonCopydef select_best_params(X, y, rf_params):
+    """
+    Optimize Random Forest parameters
+    Args:
+        X: Feature matrix
+        y: Target values
+        rf_params: Parameter grid
+    Returns:
+        Optimized model
+    """
+
+Crossover
+pythonCopydef crossover(parent1, parent2, feature_ranges):
+    """
+    Perform genetic crossover
+    Args:
+        parent1, parent2: Parent feature vectors
+        feature_ranges: Valid ranges for features
+    Returns:
+        Two child vectors
+    """
+
+Mutation
+pythonCopydef mutate(individual, mutation_rate, feature_ranges):
+    """
+    Perform genetic mutation
+    Args:
+        individual: Feature vector
+        mutation_rate: Probability of mutation
+        feature_ranges: Valid ranges
+    Returns:
+        Mutated vector
+    """
+
+Output Analysis
+Results Format
+Final output structure
+{
+    'best_conditions': list,
+    'best_k_value': float,
+    'iterations_completed': int,
+    'final_dataset_size': int
+}
+
+
+Contact and Support
+For questions, issues, or contributions, please contact:
+Haoyang.fu@ntu.edu.sg
+
