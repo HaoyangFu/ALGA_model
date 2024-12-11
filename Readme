@@ -1,2 +1,19 @@
 Active Learning Genetic Algorithm
 This project implements a hybrid optimization approach combining active learning (AL) and Genetic Algorithm (GA) for parameter optimization with small datasets. The program uses an iterative process to suggest optimal experimental conditions and incorporates user feedback through experimental results.
+
+
+Environment Requirements
+
+Python 3.10
+
+Required packages:
+
+numpy (1.26.4)
+pandas (2.2.2)
+scikit-learn (1.4.2)
+scipy (for qmc.LatinHypercube sampling)
+os (built-in)
+random (built-in)
+
+
+Project Structure
