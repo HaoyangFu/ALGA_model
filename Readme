@@ -1,6 +1,6 @@
 Active Learning Genetic Algorithm
 
-This project implements an Active Learning Genetic Algorithm (ALGA) framework that combines Active Learning (AL) and Genetic Algorithm (GA) for parameter optimization with small datasets. The system is designed to iteratively improve predictions through experimental validation and genetic operations.
+This project implements an Active Learning Genetic Algorithm (ALGA) framework that combines Active Learning (AL) and Genetic Algorithm (GA) for material design with small datasets. The system is designed to iteratively improve predictions through experimental validation and genetic operations.
 
 Environment Requirements
 Python 3.10
